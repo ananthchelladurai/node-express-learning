@@ -14,7 +14,15 @@
   "license": "GPL",
   "dependencies": {
     "express": "^4.10.7",
-    "express-handlebars": "^1.1.0",
-    "express3-handlebars": "^0.5.2"
-  }
+    "express-handlebars": "^1.1.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ananthchelladurai/node-express-learning.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ananthchelladurai/node-express-learning/issues"
+  },
+  "homepage": "https://github.com/ananthchelladurai/node-express-learning"
 }
