@@ -1,0 +1,8 @@
+Node - Core
+Express - MVC
+Grunt - TaskManager Plugin
+Mocha - Test framework
+Chai - Assertion Lib (Though Node has assertion this is need to run in the browser.)
+PhantomJS - Test framework that gives headless browser
+Zombie - Test framework that gives headless browser
+Linkchecker - To check broken links
