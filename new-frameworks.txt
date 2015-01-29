@@ -6,3 +6,4 @@ Chai - Assertion Lib (Though Node has assertion this is need to run in the brows
 PhantomJS - Test framework that gives headless browser
 Zombie - Test framework that gives headless browser
 Linkchecker - To check broken links
+Travis CI - CI like jenkins which supports JS with node
