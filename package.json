@@ -13,6 +13,7 @@
   "author": "Ananth Chelladurai",
   "license": "GPL",
   "dependencies": {
+    "body-parser": "^1.10.2",
     "express": "^4.10.7",
     "express-handlebars": "^1.1.0"
   },
