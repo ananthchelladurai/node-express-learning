@@ -6,7 +6,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(require('body-parser').urlencoded({ extended: true }));
 
-app.use(function(req, res, next){
+app.use(function(req, res, next) {
     res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
     next();
 });
@@ -83,21 +83,23 @@ app.get('/newsletter', function(req, res) {
 });
 
 app.post('/process', function(req, res) {
-    console.log('Form (from querystring): ' + req.query.form);
-    console.log('CSRF token (from hidden form field): ' + req.body._csrf);
-    console.log('Name (from visible form field): ' + req.body.name);
-    console.log('Email (from visible form field): ' + req.body.email);
-    res.redirect(303, '/thank-you');
+    if(req.xhr || req.accepts('json,html') ==='json') {
+        // if there were an error, we would send { error: 'error description' }
+        res.send({ success: true });
+    } else {
+        // if there were an error, we would redirect to an error page
+        res.redirect(303, '/thank-you');
+    }
 });
 
 // 404 catch-all handler (middleware)
-app.use(function(req, res, next){
+app.use(function(req, res, next) {
         res.status(404);
         res.render('404');
 });
 
 // 500 error handler (middleware)
-app.use(function(err, req, res, next){
+app.use(function(err, req, res, next) {
         console.error(err.stack);
         res.status(500);
         res.render('500');
@@ -107,7 +109,7 @@ app.listen(app.get('port'), function() {
   console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
 
-function getWeatherData(){
+function getWeatherData() {
     return {
         locations: [
             {
